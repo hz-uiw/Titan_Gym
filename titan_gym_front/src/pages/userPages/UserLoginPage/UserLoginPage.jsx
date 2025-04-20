@@ -20,9 +20,10 @@ function UserLoginPage(props) {
                     </div>
                 </div>
                 <div css={s.joinGroup}>
-                    <p>계정이 없으신가요?</p> <Link to='/join'>가입하기</Link>
-                    <button>로그인</button>
+                    <p>계정이 없으신가요?</p> 
+                    <Link to='/join'><span>가입하기</span></Link>
                 </div>
+                <button css={s.loginButton}>로그인</button>
             </div>
         </>
     );

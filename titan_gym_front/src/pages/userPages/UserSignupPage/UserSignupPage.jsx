@@ -54,7 +54,7 @@ function UserSignupPage(props) {
                     <span>계정이 있으신가요?</span> 
                     <Link to='/login'><span>로그인</span></Link>
                 </div>
-                    <button>회원가입</button>
+                <button css={s.joinButton}>회원가입</button>
             </div>
         </>
     );
