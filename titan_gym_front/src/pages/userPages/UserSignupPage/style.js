@@ -114,4 +114,5 @@ export const joinButton = css`
     color: #fff;
     font-size: 1.6rem;
     margin-top: 1rem;
+    cursor: pointer;
 `;

@@ -33,23 +33,23 @@ export const logInfo = css`
         margin: 0 0.2rem;
     }
 
-    & > span:first-child {
+    & > span:nth-of-type(1) {
         cursor: pointer;
         &:hover {
             text-decoration: underline;
         }
     }
 
-    & > span:nth-child(2) {
+    & > span:nth-of-type(2) {
         margin-right: 0;
     }
     
-    & > span:nth-child(3) {
+    & > span:nth-of-type(3) {
         margin-left: 0;
         margin-right: 0.5rem;
     }
 
-    & > span:last-child {
+    & > span:nth-of-type(4) {
         margin-right: 1rem;
         cursor: pointer;
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="titan_gym.titan_gym.mapper.UserAccountMapper">
+
+    <resultMap id="userResultMap" type="titan_gym.titan_gym.entity.User">
+        <id property="userId" column="user_id" />
+        <result property="username" column="username" />
+        <result property="password" column="password" />
+        <result property="name" column="name" />
+        <result property="phoneNumber" column="phone_number" />
+        <result property="email" column="email" />
+        <result property="gender" column="gender" />
+        <result property="accountExpired" column="account_expired" />
+        <result property="accountLocked" column="account_locked" />
+        <result property="credentialsExpired" column="credentials_expired" />
+        <result property="accountEnabled" column="account_enabled" />
+        <result property="createdAt" column="created_at" />
+        <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <select id="selectByUsername" resultType="titan_gym.titan_gym.entity.User">
+        select
+            user_id,
+            username,
+            password,
+            name,
+            phone_number,
+            email,
+            gender,
+            account_expired,
+            account_locked,
+            credentials_expired,
+            account_enabled,
+            created_at,
+            updated_at
+        from
+            user_tb
+        where
+            username = #{username}
+    </select>
+
+    <select id="selectById" resultType="titan_gym.titan_gym.entity.User">
+        select
+            user_id,
+            username,
+            password,
+            name,
+            phone_number,
+            email,
+            gender,
+            account_expired,
+            account_locked,
+            credentials_expired,
+            account_enabled,
+            created_at,
+            updated_at
+        from
+            user_tb
+        where
+            user_id = #{userId}
+    </select>
+
+    <insert id="addUserAccount" useGeneratedKeys="true" keyProperty="userId">
+        insert into
+            user_tb
+        values (
+            default,
+            #{username},
+            #{password},
+            #{name},
+            #{phoneNumber},
+            #{email},
+            #{gender},
+            #{accountExpired},
+            #{accountLocked},
+            #{credentialsExpired},
+            #{accountEnabled},
+            now(),
+            now()
+        )
+    </insert>
+
+
+</mapper>
