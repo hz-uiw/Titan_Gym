@@ -13,15 +13,26 @@ function UserSignupPage(props) {
         username: "",
         password: "",
         passwordCheck: "",
+        name: "",
+        phoneNumber: "",
         email: "",
     });
 
     const [ inputValidError, setInputValidError ] = useState({
         username: false,
-        email: false,
         password: false,
         passwordCheck: false,
+        name: false,
+        phoneNumber: false,
+        email: false,
     });
+
+    const handleInputOnChange = (e) => {
+        setInputValue(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value,
+        }));
+    }
 
 
     const handleJoinOnClick = () => {
@@ -53,22 +64,52 @@ function UserSignupPage(props) {
                 </div>
                 <div css={s.userFormContainer}>
                     <div css={s.userForm}>
-                        <input css={s.textInput} type="text" placeholder='아이디' />
+                        <input css={s.textInput} 
+                        onChange={handleInputOnChange}
+                            type="text" 
+                            placeholder='아이디' 
+                            name='username' 
+                            value={inputValue.username} />
                     </div>
                     <div css={s.userForm}>
-                        <input css={s.textInput} type="password" placeholder='비밀번호' />
+                        <input css={s.textInput} 
+                        onChange={handleInputOnChange}
+                            type="password" 
+                            placeholder='비밀번호' 
+                            name='password' 
+                            value={inputValue.password} />
                     </div>
                     <div css={s.userForm}>
-                        <input css={s.textInput} type="password" placeholder='비밀번호 확인' />
+                        <input css={s.textInput} 
+                        onChange={handleInputOnChange}
+                            type="password"
+                            placeholder='비밀번호 확인' 
+                            name='passwordCheck'
+                            value={inputValue.passwordCheck} />
                     </div>
                     <div css={s.userForm}>
-                        <input css={s.textInput} type="text" placeholder='이름' />
+                        <input css={s.textInput}
+                        onChange={handleInputOnChange} 
+                            type="text" 
+                            placeholder='이름' 
+                            name='name' 
+                            value={inputValue.name} />
                     </div>
                     <div css={s.userForm}>
-                        <input css={s.textInput} type="text" placeholder='연락처' />
+                        <input css={s.textInput} 
+                        onChange={handleInputOnChange}
+                            type="text" 
+                            placeholder='연락처' 
+                            name='phoneNumber' 
+                            value={inputValue.phoneNumber} />
                     </div>
                     <div css={s.userForm}>
-                        <input css={s.textInput} type="text" placeholder='이메일' />
+                        <input css={s.textInput} 
+                        onChange={handleInputOnChange}
+                            type="text" 
+                            placeholder='이메일' 
+                            name='email' 
+                            value={inputValue.email}/>
                     </div>
                     <div css={s.genderToggle}>
                         <button
