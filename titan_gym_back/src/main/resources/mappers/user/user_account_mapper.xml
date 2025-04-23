@@ -20,7 +20,7 @@
         <result property="updatedAt" column="updated_at" />
     </resultMap>
 
-    <select id="selectByUsername" resultType="titan_gym.titan_gym.entity.User">
+    <select id="selectByUsername" resultMap="userResultMap">
         select
             user_id,
             username,
@@ -41,7 +41,7 @@
             username = #{username}
     </select>
 
-    <select id="selectById" resultType="titan_gym.titan_gym.entity.User">
+    <select id="selectById" resultMap="userResultMap">
         select
             user_id,
             username,

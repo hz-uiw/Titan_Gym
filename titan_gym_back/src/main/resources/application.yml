@@ -50,5 +50,7 @@ mybatis:
 
   mapper-locations:
     - /mappers/*.xml
+    - /mappers/user/*.xml
+    - /mappers/admin/*.xml
 springdoc:
   override-with-generic-response: false

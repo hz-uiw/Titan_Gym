@@ -27,6 +27,8 @@ public class JwtAuthenticationFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
 
         jwtAuthentication(getAccessToken(request));
+
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     private void jwtAuthentication(String accessToken) {

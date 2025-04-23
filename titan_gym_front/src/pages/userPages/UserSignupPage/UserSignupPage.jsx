@@ -69,7 +69,7 @@ function UserSignupPage(props) {
                 <div css={s.userFormContainer}>
                     <div css={s.userForm}>
                         <input css={s.textInput} 
-                        onChange={handleInputOnChange}
+                            onChange={handleInputOnChange}
                             type="text" 
                             placeholder='아이디' 
                             name='username' 
@@ -77,7 +77,7 @@ function UserSignupPage(props) {
                     </div>
                     <div css={s.userForm}>
                         <input css={s.textInput} 
-                        onChange={handleInputOnChange}
+                            onChange={handleInputOnChange}
                             type="password" 
                             placeholder='비밀번호' 
                             name='password' 
@@ -85,7 +85,7 @@ function UserSignupPage(props) {
                     </div>
                     <div css={s.userForm}>
                         <input css={s.textInput} 
-                        onChange={handleInputOnChange}
+                            onChange={handleInputOnChange}
                             type="password"
                             placeholder='비밀번호 확인' 
                             name='passwordCheck'
@@ -93,7 +93,7 @@ function UserSignupPage(props) {
                     </div>
                     <div css={s.userForm}>
                         <input css={s.textInput}
-                        onChange={handleInputOnChange} 
+                            onChange={handleInputOnChange} 
                             type="text" 
                             placeholder='이름' 
                             name='name' 
@@ -101,7 +101,7 @@ function UserSignupPage(props) {
                     </div>
                     <div css={s.userForm}>
                         <input css={s.textInput} 
-                        onChange={handleInputOnChange}
+                            onChange={handleInputOnChange}
                             type="text" 
                             placeholder='연락처' 
                             name='phoneNumber' 
@@ -109,11 +109,12 @@ function UserSignupPage(props) {
                     </div>
                     <div css={s.userForm}>
                         <input css={s.textInput} 
-                        onChange={handleInputOnChange}
+                            onChange={handleInputOnChange}
                             type="text" 
                             placeholder='이메일' 
                             name='email' 
-                            value={inputValue.email}/>
+                            value={inputValue.email}
+                            errormess/>
                     </div>
                     <div css={s.genderToggle}>
                         <button

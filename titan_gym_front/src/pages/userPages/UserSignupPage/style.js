@@ -9,7 +9,6 @@ export const container = css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #eeee;
 `;
 
 export const logoBox = css`
@@ -63,7 +62,7 @@ export const genderToggle = css`
         height: 100%;
         font-size: 1.6rem;
         /* padding: 0.8rem 2.4rem; */
-        border: 2px solid #ccc;
+        border: 2px solid #fff;
         border-radius: 1rem;
         background-color: #fff;
         color: #555;
@@ -98,6 +97,7 @@ export const joinGroup = css`
         justify-content: center;
         align-items: center;
         text-decoration: none;
+        color: #eeeeee;
     }
 
     & > a > span {
@@ -108,10 +108,10 @@ export const joinGroup = css`
 export const joinButton = css`
     width: 70%;
     height: 4.5rem;
-    border: 1px solid #eee;
+    border: 1px solid red;
     border-radius: 10px;
     background-color: red;
-    color: #fff;
+    color: #eeeeee;
     font-size: 1.6rem;
     margin-top: 1rem;
     cursor: pointer;
