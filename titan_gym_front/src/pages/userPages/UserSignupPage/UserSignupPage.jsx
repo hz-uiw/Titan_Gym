@@ -2,11 +2,12 @@
 import * as s from './style';
 import React, { useState } from 'react';
 import logo from '../../../assets/titan_gym_logo_remove.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useJoinMutation } from '../../../mutations/authMutation';
 
 function UserSignupPage(props) {
     const [gender, setGender] = useState("male");
+    const navigate = useNavigate();
     const joinMutation = useJoinMutation();
 
     const [ inputValue, setInputValue ] = useState({
@@ -41,8 +42,11 @@ function UserSignupPage(props) {
          */
         joinMutation.mutateAsync({ 
             username: inputValue.username, 
-            email: inputValue.email,
             password: inputValue.password,
+            email: inputValue.email,
+            name: inputValue.name,
+            phoneNumber: inputValue.phoneNumber,
+            gender: gender,
         }).then(response => {
             console.log(response);
             alert("가입해 주셔서 감사합니다.");
