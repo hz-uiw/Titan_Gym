@@ -44,7 +44,10 @@ public class SecurityConfig {
                 exception.authenticationEntryPoint(customAuthenticationEntryPoint));
 
         http.authorizeHttpRequests(authorizeRequests -> {
-            authorizeRequests.requestMatchers("/api/auth/**", "/image/**").permitAll();
+            authorizeRequests.requestMatchers(
+                    "/api/account/join",
+                    "/image/**"
+            ).permitAll();
             authorizeRequests.anyRequest().authenticated();
         });
 

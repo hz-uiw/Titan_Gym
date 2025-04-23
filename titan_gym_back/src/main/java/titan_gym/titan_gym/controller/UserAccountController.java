@@ -14,6 +14,7 @@ public class UserAccountController {
 
     @PostMapping("/join")
     public ResponseEntity<?> joinAccount(@RequestBody ReqJoinDto reqJoinDto) {
+        System.out.println("🔥 [Controller] joinAccount 진입: " + reqJoinDto);
         return ResponseEntity.ok().body(userAccountService.join(reqJoinDto));
     }
 }

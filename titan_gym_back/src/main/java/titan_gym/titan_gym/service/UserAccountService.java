@@ -25,13 +25,14 @@ public class UserAccountService {
 
     @Transactional(rollbackFor = Exception.class)
     public User join(ReqJoinDto reqJoinDto) {
+        System.out.println("🔥 [Service] join 진입");
+
         if(duplicateByUsername(reqJoinDto.getUsername())) {
             throw new DuplicatedValueException(List.of(FieldError.builder()
                     .field("username")
                     .message("이미 존재하는 사용자이름입니다.")
                     .build()));
         }
-
         User user = User.builder()
                 .username(reqJoinDto.getUsername())
                 .password(reqJoinDto.getPassword())
@@ -44,6 +45,7 @@ public class UserAccountService {
                 .credentialsExpired(1)
                 .accountEnabled(0)
                 .build();
+        System.out.println("🧾 [Service] 생성된 user: " + user);
         userAccountRepository.saveUserAccount(user);
 
 //        UserRole userRole = UserRole.builder()
@@ -51,7 +53,6 @@ public class UserAccountService {
 //                .roleId(1)
 //                .build();
 //        userRoleRepository.save(userRole);
-
         return user;
     }
 }

@@ -63,10 +63,20 @@
     </select>
 
     <insert id="addUserAccount" useGeneratedKeys="true" keyProperty="userId">
-        insert into
-            user_tb
-        values (
-            default,
+        insert into user_tb (
+            username,
+            password,
+            name,
+            phone_number,
+            email,
+            gender,
+            account_expired,
+            account_locked,
+            credentials_expired,
+            account_enabled,
+            created_at,
+            updated_at
+        ) values (
             #{username},
             #{password},
             #{name},

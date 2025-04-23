@@ -21,6 +21,7 @@ public class UserAccountRepository {
     }
 
     public User saveUserAccount(User user) {
+        System.out.println("🔥 [Repository] saveUserAccount 진입: " + user);
         userAccountMapper.addUserAccount(user);
         return user;
     }

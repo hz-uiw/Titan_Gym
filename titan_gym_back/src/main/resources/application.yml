@@ -45,6 +45,9 @@ spring:
       max-request-size: 1000MB  # ? ?? ???? ???? ?? ? ?? ?? ??
 
 mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
   mapper-locations:
     - /mappers/*.xml
 springdoc:
