@@ -39,7 +39,7 @@ export const userForm = css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    `;
+`;
 
 export const textInput = css`
     width: 70%;
