@@ -1,7 +1,6 @@
 /**@jsxImportSource @emotion/react */
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as s from './style';
-import React from 'react';
 import headerImg from '../../../assets/titan_gym_header_logo.png'
 
 function UserMainContainer({children}) {

@@ -2,9 +2,9 @@ import { css } from "@emotion/react";
 
 export const container = css`
     width: 70rem;
-    height: 70rem;
-    background-color: #eee;
-    margin: auto;
+    height: 77.5rem;
+    border: 5px solid red;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,9 +13,14 @@ export const container = css`
 
 export const logoBox = css`
     width: 20rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     & > img {
         width: 100%;
+        object-fit: cover;
     }
 `;
 
@@ -45,6 +50,37 @@ export const textInput = css`
     border-radius: 10px;
 `;
 
+export const genderToggle = css`
+    width: 70%;
+    height: 4.5rem;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.2rem;
+
+    button {
+        width: 100%;
+        height: 100%;
+        font-size: 1.6rem;
+        /* padding: 0.8rem 2.4rem; */
+        border: 2px solid #fff;
+        border-radius: 1rem;
+        background-color: #fff;
+        color: #555;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    button.active {
+        background-color: #555;
+        color: #fff;
+        border-color: #555;
+    }
+
+    button:hover {
+        background-color: #eee;
+    }
+`;
+
 export const joinGroup = css`
     width: 70%;
     height: 4.5rem;
@@ -61,6 +97,7 @@ export const joinGroup = css`
         justify-content: center;
         align-items: center;
         text-decoration: none;
+        color: #eeeeee;
     }
 
     & > a > span {
@@ -71,10 +108,11 @@ export const joinGroup = css`
 export const loginButton = css`
     width: 70%;
     height: 4.5rem;
-    border: 1px solid #eee;
+    border: 1px solid red;
     border-radius: 10px;
     background-color: red;
-    color: #fff;
+    color: #eeeeee;
     font-size: 1.6rem;
     margin-top: 1rem;
+    cursor: pointer;
 `;

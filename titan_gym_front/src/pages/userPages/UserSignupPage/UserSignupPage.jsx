@@ -171,7 +171,7 @@ function UserSignupPage(props) {
                         </button>
                     </div>
                 </div>
-                <div css={s.joinGroup}>
+                <div css={s.loginGroup}>
                     <span>계정이 있으신가요?</span> 
                     <Link to='/login'><span>로그인</span></Link>
                 </div>
