@@ -60,9 +60,30 @@ function UserLoginPage(props) {
         } catch (error) {
             if(error.response.status === 401) {
                 const result = await Swal.fire({
-                    
-                })
-            }
+                    title: '계정 활성화',
+                    text: '계정 활성화를 하려면 등록하신 메일을 통해 계정 인증을 하세요. 다시 메일 전송이 필요하면 전송버튼을 클릭하세요.',
+                    confirmButtonText: '전송',
+                    confirmButtonColor: "#2389e2",
+                    showCancelButton: true,
+                    cancelButtonText: '취소',
+                    cancelButtonColor: "#999999"
+                });
+                if(result.isConfirmed) {
+                    await sendAuthMailMutation.mutateAsync(inputValue.username);
+                    await Swal.fire({       // function fire<T = any>(options: SweetAlertOptions): Promise<SweetAlertResult<Awaited<T>>> >> Promise 이기 때문에 await 걸어줘야함
+                        title: '메일 전송 완료',
+                        confirmButtonText: '확인',
+                        confirmButtonColor: "#2389e2"
+                    });
+                };
+            } else {
+                await Swal.fire({
+                    title: '로그인 실패',
+                    text: '사용자 정보를 다시 확인해주세요!',
+                    confirmButtonText: '확인',
+                    confirmButtonColor: "#e22323"
+                });
+            };
         }
     }
 
