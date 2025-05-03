@@ -24,4 +24,8 @@ public class UserAccountRepository {
         userAccountMapper.addUserAccount(user);
         return user;
     }
+
+    public void updateAccountEnabledByUsername(String username) {
+        userAccountMapper.updateAccountEnabledByUsernameInt(username);
+    }
 }

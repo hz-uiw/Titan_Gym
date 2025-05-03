@@ -20,6 +20,15 @@
         <result property="updatedAt" column="updated_at" />
     </resultMap>
 
+    <update id="updateAccountEnabledByUsernameInt">
+        update
+            user_tb
+        set
+            account_enabled = 1
+        where
+            username = #{username}
+    </update>
+
     <select id="selectByUsername" resultMap="userResultMap">
         select
             user_id,

@@ -26,6 +26,8 @@ public class UserAccountService {
     @Autowired
     private UserAccountRepository userAccountRepository;
     @Autowired
+    private EmailService emailService;
+    @Autowired
     private JwtUtil jwtUtil;
 
     public boolean duplicateByUsername(String username) {
@@ -55,7 +57,7 @@ public class UserAccountService {
         userAccountRepository.saveUserAccount(user);
 
         try { // 계정 생성하면 인증 메일 보내주기! 근데 메일이 전송 안됐다고 회원가입 실패하면 안되니까, 메서드에 throws 로 예외 처리하지 않고 try-catch 사용!
-            emailService.sentAuthMail(reqJoinDto.getEmail(), reqJoinDto.getUsername());
+            emailService.sendAuthMail(reqJoinDto.getEmail(), reqJoinDto.getUsername());
         } catch (Exception e) {
             e.printStackTrace();
         }
